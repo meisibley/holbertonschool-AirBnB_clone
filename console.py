@@ -17,11 +17,11 @@ class HBNBCommand(cmd.Cmd):
         """Nothing happens if an empty line is received"""
         pass
 
-    def exec_quit(self):
+    def do_quit(self):
         """Quit command to end the program"""
         return True
 
-    def exec_EOF(self, arg):
+    def do_EOF(self, arg):
         """EOF signal indicating to end the program"""
         print("")
         return True
