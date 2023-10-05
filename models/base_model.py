@@ -22,16 +22,19 @@ class BaseModel:
         self.updated_at = datetime.today()
         if kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key =="created_at" or key == "updated_at":
+                if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, d_t)
                 elif key == "__class__":
                     pass
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def save(self):
         """Updates most recent change time"""
         self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """Creates a dictionary representation of the obj"""
