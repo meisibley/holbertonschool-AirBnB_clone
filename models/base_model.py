@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # base_model.py
 """Defines a new class BaseModel"""
-import uuid4
+import uuid
 import datetime
 
 
@@ -10,6 +10,7 @@ class BaseModel:
 
     def __init__(self):
         """Initializes a new instance of BaseModel"""
+        tformat = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid.uuid4())
         self.created_at = datetime.datetime.now()
         self.updated_at = datetime.datetime.now()
