@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # base_model.py
 """Defines a new class BaseModel"""
-from  uuid import uuid4
-from datetime import datetime
+import uuid4
+import datetime
 
 
 class BaseModel:
@@ -10,9 +10,9 @@ class BaseModel:
 
     def __init__(self):
         """Initializes a new instance of BaseModel"""
-        self.id = str(uuid4())
-        self.created_at = datetime.today()
-        self.updated_at = datetime.today()
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.datetime.now()
+        self.updated_at = datetime.datetime.now()
 
     def __str__(self):
         """Creates the string representation of the obj"""
@@ -20,7 +20,7 @@ class BaseModel:
 
     def save(self):
         """Updates most recent change time"""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
         """Creates a dictionary representation of the obj"""
