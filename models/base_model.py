@@ -4,6 +4,7 @@
 import uuid
 import datetime
 
+
 class BaseModel:
     """Creates an new BaseModel"""
 
@@ -19,7 +20,7 @@ class BaseModel:
 
     def save(self):
         """Updates most recent change time"""
-        updated_at = datetime.datetime.now()
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
         """Creates a dictionary representation of the obj"""
