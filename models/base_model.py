@@ -16,7 +16,8 @@ class BaseModel:
 
     def __str__(self):
         """Creates the string representation of the obj"""
-        return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                        self.id, self.__dict__)
 
     def save(self):
         """Updates most recent change time"""
