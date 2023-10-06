@@ -80,18 +80,18 @@ class TestBaseModel_save(unittest.TestCase):
     @classmethod
     def setUp(self):
         try:
-            os.rename("filename.json", "other")
+            os.rename("file.json", "other")
         except IOError:
             pass
 
     @classmethod
     def tearDown(self):
         try:
-            os.remove("filename.json")
+            os.remove("file.json")
         except IOError:
             pass
         try:
-            os.rename("other", "filename.json")
+            os.rename("other", "file.json")
         except IOError:
             pass
 
@@ -122,7 +122,7 @@ class TestBaseModel_save(unittest.TestCase):
         base1 = BaseModel()
         base1.save()
         base1id = "BaseModel." + base1.id
-        with open("filename.json", "r") as file:
+        with open("file.json", "r") as file:
             self.assertIn(base1id, file.read())
 
 
