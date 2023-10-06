@@ -3,11 +3,13 @@
 from models.base_model import BaseModel
 
 
-def __init__(self, name=""):
-    """attribute name is public
+class Amenity(BaseModel):
+    """Defines new class Amenity"""
 
-    arg:
-        name: a string value
-    """
+    def __init__(self, name=""):
+        """attribute name is public
 
-    self.name = name
+        arg:
+            name: a string value
+        """
+        self.name = name
