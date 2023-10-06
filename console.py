@@ -17,15 +17,21 @@ class HBNBCommand(cmd.Cmd):
         """Nothing happens if an empty line is received"""
         pass
 
-    def do_quit(self):
+    def do_quit(self, arg):
         """Quit command to end the program"""
         return True
 
+    def help_quit(self):
+        """for help quit command"""
+        print("Quit command to exit the program\n")
+
     def do_EOF(self, arg):
         """EOF signal indicating to end the program"""
-        print("")
         return True
 
+    def help_EOF(self):
+        """for help EOF command"""
+        print("EOF signal indicating to exit the program\n")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
