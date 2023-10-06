@@ -5,13 +5,15 @@ from models.place import Place
 from models.user import User
 
 
-def __init__(self, text=""):
-    """attribute text is a string
+class Review(BaseModel):
+    """Defines new class Review"""
 
-    arg:
-        text: string
-    """
+    def __init__(self, text=""):
+        """attribute text is a string
 
-    self.place_id = Place.id
-    self.user_id = User.id
-    self.text = text
+        arg:
+            text: string
+        """
+        self.place_id = Place.id
+        self.user_id = User.id
+        self.text = text
