@@ -4,12 +4,9 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """class State represents state
+    """Creates the class State
 
-    args:
-        name: string
+    Attributes:
+        name (str): The name of the state
     """
-
-    def __init__(self, name=""):
-        """name is a public attribute"""
-        self.name = name
+    name = ""
