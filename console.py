@@ -3,6 +3,12 @@
 """Defines the console for the AirBnB Clone Project"""
 import cmd
 from models import storage
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -37,6 +43,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """EOF signal indicating to end the program"""
+        print("")
         return True
 
     def help_EOF(self):
@@ -64,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
             name (str): The class name to be used
             iden (str): THe id of the obj to print
         """
-        obj_dict = storage.save()
+        obj_dict = storage.all()
         if not name:
             print("** class name missing **")
         elif name not in HBNBCommand.__classes:
@@ -102,15 +109,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             name (str): (optional) Class to print
         """
-        if name:
-            if name not in HBNBCommand.__classes:
-                print("** class doesn't exist **")
-            else:
-                obj1 = []
-                for obj in storage.all().values():
-                    if name == obj.__class__.__name__:
-                        obj1.append(obj.__str__())
-                print(obj1)
+        if name and name not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            obj1 = []
+            for obj in storage.all().values():
+                if name and name == obj.__class__.__name__:
+                    obj1.append(obj.__str__())
+                else:
+                    obj1.append(obj.__str__())
+            print(obj1)
 
     def do_update(self, name, iden, attr, value):
         """Adds a single attribute to the given instance
