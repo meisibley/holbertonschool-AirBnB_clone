@@ -4,12 +4,14 @@ from models.base_model import BaseModel
 from models.state import State
 
 
-def __init__(self, name=""):
-    """all attributes are public
+class City(BaseModel):
+    """Defines new class City"""
 
-    arg:
-        name: city name
-    """
+    def __init__(self, name=""):
+        """all attributes are public
 
-    self.state_id = State.id
-    self.name = name
+        arg:
+            name: city name
+        """
+        self.state_id = State.id
+        self.name = name
