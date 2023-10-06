@@ -11,7 +11,7 @@ class FileStorage:
         __file_path (str): Where to save data
         __objects (dict): Empty - used to store objects by cls.id
     """
-    __file_path = "filename.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
