@@ -11,7 +11,9 @@ You can use either interactive way `./console.py` or non-interactive way `echo "
 ### How to use it
 Below is a brief commands list:
 |method/command|description|example|
-|create <class>|Creates a new instance of BaseModel, save it to the JSON file and print the id|$ create BaseModel|
+|--------------|-----------|-------|
+|create <class> |Creates a new instance of BaseModel, save it to the JSON file and print the id|$ create BaseModel|
+|---------------|-------------------------------------------------------------------------------------------------|
 |show <class>|Prints the string representation of an instance based on the class name and id.|$ show BaseModel 1234-1234-1234|
 |destroy|Deletes an instance based on the class name and id, and save the change into the JSON file)|$ destroy BaseModel 1234-1234-1234|
 |all|Prints all string representation of all instances based or not on the class name.|$ all BaseModel|
