@@ -122,6 +122,7 @@ class TestFileStorage_other_methods(unittest.TestCase):
         models.storage.new(cty)
         models.storage.new(am)
         models.storage.new(rev)
+        models.storage.save()
         read_val = ""
         with open("file.json", "r") as file:
             read_val = file.read()
@@ -162,13 +163,10 @@ class TestFileStorage_other_methods(unittest.TestCase):
         self.assertIn("City." + cty.id, obs)
         self.assertIn("Amenity." + am.id, obs)
         self.assertIn("Review." + rev.id, obs)
-
-    def test_reload_without_file(self):
-        self.assertRaises(fileNotFoundError, models.storage.reload())
-
+        
     def test_reload_with_arguments(self):
         with self.assertRaises(TypeError):
-            models.storage.reload(None)
+            models.storage.reload([1, 2, 3])
 
 
 if __name__ == "__main__":

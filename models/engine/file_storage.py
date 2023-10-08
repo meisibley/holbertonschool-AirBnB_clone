@@ -45,5 +45,5 @@ class FileStorage:
                     cls_name = obj["__class__"]
                     del obj["__class__"]
                     self.new(eval(cls_name)(**obj))
-        except IOError:
+        except FileNotFoundError:
             pass
