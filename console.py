@@ -101,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(args1) == 1:
             print("** instance id missing **")
-        elif "{}.{}".format(args1[0], args1[1]) not in obj_dict:
+        elif "{}.{}".format(args1[0], args1[1]) not in obj_dict.keys():
             print("** no instance found **")
         else:
             del obj_dict["{}.{}".format(args1[0], args1[1])]
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         elif type(eval(args1[2])) == dict:
             ob = obj_dict["{}.{}".format(args1[0], args1[1])]
             for k, v in eval(args1[2]).items():
-                if (k in ob.__class__.__dict__[k].keys() and
+                if (k in ob.__class__.__dict__.keys() and
                     type(ob.__class__.__dict__[k]) in {str,
                                                        int, float}):
                     v_type = type(ob.__class__.__dict__[k])
