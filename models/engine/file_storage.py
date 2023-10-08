@@ -2,7 +2,6 @@
 # file_storage.py
 """Creates a new class: FileStorage"""
 import json
-from models.base_model import BaseModel
 
 
 class FileStorage:
