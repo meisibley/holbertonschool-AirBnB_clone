@@ -53,7 +53,7 @@ class TestUser_instantiation(unittest.TestCase):
         usr1 = User()
         sleep(0.1)
         usr2 = User()
-        self.assertLess(usr1.created.at, usr2.created_at)
+        self.assertLess(usr1.created_at, usr2.created_at)
 
     def test_two_users_diff_updated_at(self):
         usr1 = User()
