@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # file_storage.py
+"""Creates a new class: FileStorage"""
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -46,4 +47,4 @@ class FileStorage:
                     del obj["__class__"]
                     self.new(eval(cls_name)(**obj))
         except FileNotFoundError:
-            pass
+            return
