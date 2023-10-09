@@ -15,6 +15,7 @@ from models.review import Review
 
 
 def sep(arg):
+    """Function to separate user arguments"""
     c_brackets = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
     if c_brackets is None:
