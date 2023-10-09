@@ -2,7 +2,7 @@
 # file_storage.py
 """Creates a new class: FileStorage"""
 import json
-from models.basemodel import BaseModel
+from models.base_model import BaseModel
 from models.city import City
 from models.state import State
 from models.place import Place
