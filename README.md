@@ -19,5 +19,5 @@ Below is a brief commands list:
 |update|Updates an instance based on the class name and id by adding or updating attribute, and save the change into the JSON file).|$ update BaseModel 1234-1234-1234 email "aibnb@mail.com"|
 |help|List all available commands|(hbnb) help|
 |quit|Exit the console|(hbnb) quit|
-|EOF|Exit the console|(hbnb) ^C|
+|EOF|Exit the console||
 ### examples
