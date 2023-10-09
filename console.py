@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
             for k, v in HBNBCommand.__classes:
                 if args1[0].lower() == k:
-                    args1[0] = v        
+                    args1[0] = v 
         if len(args1) > 0 and args1[0] not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
         else:
