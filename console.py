@@ -5,6 +5,13 @@ import cmd
 import re
 from shlex import split
 from models import storage
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 
 
 def sep(arg):
@@ -35,13 +42,13 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
     __classes = {
-            "BaseModel",
-            "User",
-            "State",
-            "City",
-            "Amenity",
-            "Place",
-            "Review"
+            "basemodel": "BaseModel",
+            "user": "User",
+            "state": "State",
+            "city": "City",
+            "amenity": "Amenity",
+            "place": "Place",
+            "review": "Review",
     }
 
     def emptyline(self):
@@ -68,9 +75,13 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, arg):
         """Creates a new instance of given class"""
         args1 = sep(arg)
+        if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
+            for k, v in HBNBCommand.__classes.items():
+                if args1[0].lower() == k:
+                    args1[0] = v
         if len(args1) == 0:
             print("** class name missing **")
-        elif args1[0] not in HBNBCommand.__classes:
+        elif args1[0].lower() not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
         else:
             print(eval(args1[0])().id)
@@ -79,10 +90,14 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints str rep of id in the named class"""
         args1 = sep(arg)
+        if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
+            for k, v in HBNBCommand.__classes.items():
+                if args1[0].lower() == k:
+                    args1[0] = v
         obj_dict = storage.all()
         if len(args1) == 0:
             print("** class name missing **")
-        elif args1[0] not in HBNBCommand.__classes:
+        elif args1[0].lower() not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
         elif len(args1) == 1:
             print("** instance id missing **")
@@ -94,10 +109,14 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         """Deletes an instance of class.id and saves"""
         args1 = sep(arg)
+        if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
+            for k, v in HBNBCommand.__classes:
+                if args1[0].lower() == k:
+                    args1[0] = v
         obj_dict = storage.all()
         if len(args1) == 0:
             print("** class name missing **")
-        elif args1[0] not in HBNBCommand.__classes:
+        elif args1[0].lower() not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
         elif len(args1) == 1:
             print("** instance id missing **")
@@ -110,7 +129,11 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Prints all str rep of given class, or all available"""
         args1 = sep(arg)
-        if len(args1) > 0 and args1[0] not in HBNBCommand.__classes:
+        if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
+            for k, v in HBNBCommand.__classes:
+                if args1[0].lower() == k:
+                    args1[0] = v        
+        if len(args1) > 0 and args1[0] not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
         else:
             ob1 = []
@@ -124,11 +147,15 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Updates/Adds a single attribute to obbject"""
         args1 = sep(arg)
+        if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
+            for k, v in HBNBCommand.__classes.items():
+                if args1[0].lower() == k:
+                    args1[0] = v
         obj_dict = storage.all()
         if len(args1) == 0:
             print("** class name missing **")
             return False
-        elif args1[0] not in HBNBCommand.__classes:
+        elif args1[0].lower() not in HBNBCommand.__classes.keys():
             print("** class doesn't exist **")
             return False
         elif len(args1) == 1:
