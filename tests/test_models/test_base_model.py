@@ -73,6 +73,19 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertEqual(base1.created_at, d_t)
         self.assertEqual(base1.updated_at, d_t)
 
+    def test_str_rep(self):
+        d_t = datetime.now()
+        d_t_r = repr(d_t)
+        base1 = BaseModel()
+        base1.id = "66566"
+        base1.created_at = d_t
+        base1.updated_at = d_t
+        base1_str = base1.__str__()
+        self.assertIn("[BaseModel] (66566)", base1_str)
+        self.assertIn("'id': '66566'", base1_str)
+        self.assertIn("'created_at': " + d_t_r, base1_str)
+        self.assertIn("'updated_at': " + d_t_r, base1_str)
+
 
 class TestBaseModel_save(unittest.TestCase):
     """Unitests for save method of class: BaseModel"""
