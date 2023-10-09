@@ -55,7 +55,7 @@ class HBNBCommand(cmd.Cmd):
         """Nothing happens if an empty line is received"""
         pass
 
-    def do_quit(self, *args):
+    def do_quit(self, arg):
         """Quit command to end the program"""
         return True
 
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
         """for help quit command"""
         print("Quit command to exit the program\n")
 
-    def do_EOF(self, *args):
+    def do_EOF(self, arg):
         """EOF signal indicating to end the program"""
         print("")
         return True
