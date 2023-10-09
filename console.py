@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance of class.id and saves"""
         args1 = sep(arg)
         if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
-            for k, v in HBNBCommand.__classes:
+            for k, v in HBNBCommand.__classes.items():
                 if args1[0].lower() == k:
                     args1[0] = v
         obj_dict = storage.all()
@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints all str rep of given class, or all available"""
         args1 = sep(arg)
         if len(args1) > 0 and args1[0] in HBNBCommand.__classes.keys():
-            for k, v in HBNBCommand.__classes:
+            for k, v in HBNBCommand.__classes.items():
                 if args1[0].lower() == k:
                     args1[0] = v 
         if len(args1) > 0 and args1[0] not in HBNBCommand.__classes.keys():
