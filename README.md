@@ -62,6 +62,7 @@ Below is a brief commands list:
 ### tests
 
 All tests are in tests/test_models directory. They are developed and implemented for all the classes of the project using `unittest` in a different test environment, in order not to bother the JSON storage working file `file.json`, which will be deleted at the end of the tests.
+
 To test the classes in the project:
 ```
 python3 -m unittest discover tests
