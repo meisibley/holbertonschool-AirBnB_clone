@@ -12,8 +12,8 @@ You can use either interactive way `$ ./console.py` or non-interactive way `$ ec
 - Pycodestyle was taken into accout and implemented for all files
 - FileStorage class is in charge of managing the storage through a JSON file (`file.json`), those instances are created, updated or deleted, all this through a FileStorage instance called `storage`.
 - Console is used to manage the storage of class instances (`file.json`), the console can be used and executed in two ways, interactive and non-interactive mode:
-`Interactive mode:`
-'''
+####Interactive mode:
+```
 $ ./console.py
 (hbnb) help
 
@@ -25,9 +25,9 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb)
 (hbnb) quit
 $
-'''
-`Non-Interactive mode:`
-'''
+```
+####Non-Interactive mode:
+```
 $ echo "help" | ./console.py
 (hbnb)
 
@@ -46,7 +46,7 @@ Documented  commands  (type help <topic>):
 ==========================================
 EOF  all  create  destroy  help  quit  show  update 
 (hbnb)
-'''
+```
 - Below is a brief commands list:
 |method/command|description|example|
 |--------------|-----------|-------|
@@ -60,17 +60,16 @@ EOF  all  create  destroy  help  quit  show  update
 |EOF|Exit the console||
 ### tests
 All tests are in tests/test\_models directory. They are developed and implemented for all the classes of the project using `unittest` in a different test environment, in order not to bother the JSON storage working file `file.json`, which will be deleted at the end of the tests.
-
-To test the classes in the project:
-'''
+####To test the classes in the project:
+```
 python3 -m unittest discover tests
-'''
-To test a specitic model:
-'''
+```
+####To test a specitic model:
+```
 python3 -m unittest tests/test\_models/test\_base\_model
-'''
+```
 ### examples
-'''
+```
 $ ./console.py 
 (hbnb) create BaseModel
 ae8bed8f-eff4-4e49-851c-d94214bda95d
@@ -78,9 +77,9 @@ ae8bed8f-eff4-4e49-851c-d94214bda95d
 (hbnb) show BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d
 [BaseModel] (ae8bed8f-eff4-4e49-851c-d94214bda95d) {'id': 'ae8bed8f-eff4-4e49-851c-d94214bda95d', 'created\_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767337), 'updated\_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767348), 'user\_name': 'Bob'}
 (hbnb)
-'''
+```
 
-'''
+```
 $ ./console.py 
 (hbnb) create User
 a7095b86-014e-4a34-b140-86711a10243a
@@ -88,4 +87,4 @@ a7095b86-014e-4a34-b140-86711a10243a
 (hbnb) destroy User a7095b86-014e-4a34-b140-86711a10243a
 (hbnb) all
 []
-'''
+```
