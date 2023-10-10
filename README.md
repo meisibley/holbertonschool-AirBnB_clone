@@ -12,6 +12,7 @@ You can use either interactive way `$ ./console.py` or non-interactive way `$ ec
 - Pycodestyle was taken into accout and implemented for all files
 - FileStorage class is in charge of managing the storage through a JSON file (`file.json`), those instances are created, updated or deleted, all this through a FileStorage instance called `storage`.
 - Console is used to manage the storage of class instances (`file.json`), the console can be used and executed in two ways, interactive and non-interactive mode:
+
 Interactive mode:
 ```
 $ ./console.py
@@ -36,10 +37,10 @@ Documented  commands  (type help <topic>):
 EOF  all  create  destroy  help  quit  show  update 
 (hbnb)
 $
-$ cat test\_help
+$ cat test_help
 help
 $
-$ cat test\_help | ./console.py
+$ cat test_help | ./console.py
 (hbnb)
 
 Documented  commands  (type help <topic>):
@@ -55,27 +56,30 @@ Below is a brief commands list:
 |destroy|Deletes an instance based on the class name and id, and save the change into the JSON file)|$ destroy BaseModel 1234-1234-1234|
 |all|Prints all string representation of all instances based or not on the class name.|$ all BaseModel|
 |update|Updates an instance based on the class name and id by adding or updating attribute, and save the change into the JSON file).|$ update BaseModel 1234-1234-1234 email "aibnb@mail.com"|
-|help|List all available commands|(hbnb) help or help quit|
+|help|List all available commands|(hbnb) help|
 |quit or EOF|Exit the console|(hbnb) quit|
 |EOF|Exit the console||
-tests
-All tests are in tests/test\_models directory. They are developed and implemented for all the classes of the project using `unittest` in a different test environment, in order not to bother the JSON storage working file `file.json`, which will be deleted at the end of the tests.
+
+### tests
+
+All tests are in tests/test_models directory. They are developed and implemented for all the classes of the project using `unittest` in a different test environment, in order not to bother the JSON storage working file `file.json`, which will be deleted at the end of the tests.
 To test the classes in the project:
 ```
 python3 -m unittest discover tests
 ```
 To test a specitic model:
 ```
-python3 -m unittest tests/test\_models/test\_base\_model
+python3 -m unittest tests/test_models/test_base_model
 ```
+
 ### examples
 ```
 $ ./console.py 
 (hbnb) create BaseModel
 ae8bed8f-eff4-4e49-851c-d94214bda95d
-(hbnb) update BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d user\_name "Bob"
+(hbnb) update BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d user_name "Bob"
 (hbnb) show BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d
-[BaseModel] (ae8bed8f-eff4-4e49-851c-d94214bda95d) {'id': 'ae8bed8f-eff4-4e49-851c-d94214bda95d', 'created\_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767337), 'updated\_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767348), 'user\_name': 'Bob'}
+[BaseModel] (ae8bed8f-eff4-4e49-851c-d94214bda95d) {'id': 'ae8bed8f-eff4-4e49-851c-d94214bda95d', 'created_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767337), 'updated_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767348), 'user_name': 'Bob'}
 (hbnb)
 ```
 
