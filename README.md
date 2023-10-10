@@ -58,7 +58,6 @@ Below is a brief commands list:
 |update|Updates an instance based on the class name and id by adding or updating attribute, and save the change into the JSON file).|$ update BaseModel 1234-1234-1234 email "aibnb@mail.com"|
 |help|List all available commands|(hbnb) help|
 |quit or EOF|Exit the console|(hbnb) quit|
-|EOF|Exit the console||
 
 ### tests
 
@@ -79,7 +78,9 @@ $ ./console.py
 ae8bed8f-eff4-4e49-851c-d94214bda95d
 (hbnb) update BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d user_name "Bob"
 (hbnb) show BaseModel ae8bed8f-eff4-4e49-851c-d94214bda95d
-[BaseModel] (ae8bed8f-eff4-4e49-851c-d94214bda95d) {'id': 'ae8bed8f-eff4-4e49-851c-d94214bda95d', 'created_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767337), 'updated_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767348), 'user_name': 'Bob'}
+[BaseModel] (ae8bed8f-eff4-4e49-851c-d94214bda95d) {'id': 'ae8bed8f-eff4-4e49-851c-d94214bda95d',
+'created_at': datetime.datetime(2023, 10, 10, 6, 33, 19, 767337), 'updated_at': datetime.datetime
+(2023, 10, 10, 6, 33, 19, 767348), 'user_name': 'Bob'}
 (hbnb)
 ```
 
