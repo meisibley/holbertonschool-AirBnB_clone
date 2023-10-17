@@ -33,7 +33,7 @@ button:hover {
         opacity: 90%;
 }
 
-section.filters div.h3, section.filter div.h4 {
+section.filters div.first-child {
 	border-right: 1px solid #DDDDDD;
 }
 
