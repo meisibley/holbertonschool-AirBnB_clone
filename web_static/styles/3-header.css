@@ -1,19 +1,9 @@
 header {
 	background-color: white;
+	background-image: url(../images/logo.png);
+	background-position: 20px;
+	background-repeat: no-repeat;
 	height: 70px;
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
-	line-height: 70px;
-}
-
-a.logo {
-	background-image: url(../images/logo.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	display: inline-block;
-	width: 142px;
-	height: 60px;
-	vertical-align: middle;
-	position: relative;
-	left: 20px;
 }
