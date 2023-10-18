@@ -33,13 +33,13 @@ button:hover {
         opacity: 90%;
 }
 
-section.filters div.first-child {
+section.filters div:first-child {
 	border-right: 1px solid #DDDDDD;
 }
 
-section.filters div.h3 {
+section.filters div h3 {
 	font-weight: 600;
-	margin: 1rem auto 0.05rem 1.33rem;
+	margin: 1rem auto 0.33rem 1.33rem;
 }
 
 section.filters div h4 {
