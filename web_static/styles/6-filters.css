@@ -30,13 +30,13 @@
 
 .filters h3 {
     font-weight: 600;
-    margin: 1rem auto 0.36rem 3.2rem;
+    margin: 1rem 3rem 0.36rem 3.2rem;
 }
 
 .filters h4 {
     font-weight: 400;
     font-size: 14px;
-    margin: 0.36rem auto 1rem 3.2rem;
+    margin: 0.36rem 3rem 1rem 3.2rem;
 }
 
 .filters .amenities .popover li {
@@ -64,7 +64,7 @@
 
 .filters .locations .popover h2 {
     font-size: 1.5rem;
-    margin: 2rem auto -0.33rem 2rem;
+    margin: 2rem 3rem -0.33rem 2rem;
 }
 
 .filters .locations:hover .popover, .filters .amenities:hover .popover {
