@@ -10,11 +10,12 @@ section.filters {
 section.filters div.locations, section.filters div.amenities {
 	height: 100%;
 	width: 25%;
-	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-left: 50px;
+	flex-wrap: wrap;
+	position: relative;
+	box-sizing: border-box;
 }
 
 button {
@@ -33,19 +34,20 @@ button:hover {
         opacity: 90%;
 }
 
-section.filters div.h3, section.filter div.h4 {
+section.filters div.first-child {
 	border-right: 1px solid #DDDDDD;
 }
 
 section.filters div.h3 {
+	padding-bottom: 5px;
+	padding-left: 50px;
 	font-weight: 600;
-	margin: 1rem auto 0.05rem 1.33rem;
 }
 
 section.filters div h4 {
+	padding-left: 50px;
 	font-weight: 400;
 	font-size: 14px;
-	margin: 0.20rem auto 1rem 0.13rem;
 }
 
 section.filters div ul.popover {
